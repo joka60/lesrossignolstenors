@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Les Rossignols Tenors - Accueil</title>
+
+  <!-- Bootstrap local -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #111;
+      color: #fff;
+      height: 100%;
+    }
+
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+      height: 100vh;
+    }
+
+    .carousel-item {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75); /* assombrit l’image */
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      padding: 1rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      animation: fadeInDown 1.5s ease-in-out;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    .btn-primary {
+      background-color: #ffcc00;
+      border: none;
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      background-color: #e6b800;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (min-width: 768px) {
+      .hero-content h1 { font-size: 4rem; }
+      .hero-content p { font-size: 1.5rem; }
+    }
+
+    footer {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Les Rossignols Tenors</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="a-propos.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="musique.html">Musique</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carrousel -->
+  <div id="carouselHero" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active" style="background-image: url('assets/images/slide1.jpg');">
+        <div class="hero-content">
+          <h1>Bienvenue chez Les Rossignols Tenors</h1>
+          <p class="lead">Une expérience musicale qui touche l'âme</p>
+          <a href="musique.html" class="btn btn-primary mt-3">Écouter maintenant</a>
+        </div>
+      </div>
+
+      <div class="carousel-item" style="background-image: url('assets/images/acceuil1.jpg');">
+        <div class="hero-content">
+          <h1>Musiques & Harmonie</h1>
+          <p class="lead">Une fusion parfaite de voix et de rythmes</p>
+          <a href="galerie.html" class="btn btn-primary mt-3">Voir la galerie</a>
+        </div>
+      </div>
+
+      <div class="carousel-item" style="background-image: url('assets/images/semainedesart/sm2.jpg');">
+        <div class="hero-content">
+          <h1>En Live sur Scène</h1>
+          <p class="lead">Des moments inoubliables en concert</p>
+          <a href="musique.html" class="btn btn-primary mt-3">Nos performances</a>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Présentation -->
+  <section class="container text-center py-5">
+    <h2 class="mb-4">Qui sommes-nous ?</h2>
+    <p class="lead">"Les Rossignols Tenors," un groupe Afro-Folk residant à l'Est de la R D Congo, etant passionnés ils transmettent de l'émotion, de la spiritualité à travers leurs Musiques puissantes et harmonieuse.</p>
+    <a href="a-propos.html" class="btn btn-outline-light mt-3">En savoir plus</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-white py-4">
+    <p class="mb-0">&copy; 2025 Les Rossignols Tenors. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

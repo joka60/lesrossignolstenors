@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>À propos - Les Rosignol Tenor</title>
+
+  <!-- Bootstrap local -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    .banner {
+      background: url('assets/images/IF/IF3.jpg') center center/cover no-repeat;
+      position: relative;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .banner h1 {
+      z-index: 2;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    h2 {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .mission-card {
+      background: linear-gradient(145deg, #1c1c1c, #2a2a2a);
+      border-left: 5px solid #ffcc00;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .mission-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+    }
+
+    .member-card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+      transition: transform 0.3s;
+    }
+
+    .member-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+    }
+
+    .member-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ffcc00;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .row-flex {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Les Rossignols Tenors</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="musique.html">Musique</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <div class="banner">
+    <h1>À propos du groupe</h1>
+  </div>
+
+  <!-- Présentation et Mission -->
+  <section class="container">
+    <div class="row row-flex">
+      <div class="col-md-6">
+        <h2>Notre histoire</h2>
+        <p class="lead">
+          Créé en 2021 par des passionnés de musique, <strong>Les Rossignols Tenors</strong> ,un groupe qui allie tradition, spirtualité, émotion et modernité.
+          Chaque membre apporte sa voix, son âme et son énergie pour créer des œuvres touchantes et vibrantes. Notre aventure a commencé sur scène,
+          mais elle se poursuit désormais dans le cœur de notre public fidèle.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <h2>Notre mission</h2>
+        <div class="mission-card">
+          💛 Toucher les cœurs à travers la puissance de la musique.
+        </div>
+        <div class="mission-card">
+          🌍 Promouvoir les valeurs d’unité, de paix et d’espoir.
+        </div>
+        <div class="mission-card">
+          🎤 Offrir des performances de qualité, inspirantes et inoubliables.
+        </div>
+        <div class="mission-card">
+           🎵 Transmettre la beauté de la culture à travers la musique.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membres du groupe -->
+  <section class="container">
+    <h2 class="text-center">Nos membres</h2>
+    <div class="row g-4">
+      <!-- Exemple de membre -->
+      <div class="col-md-4">
+        <div class="member-card">
+          <img src="assets/images/WhatsApp Image 2025-05-21 à 10.45.09_add55799.jpg" alt="Membre 2">
+          <h5 class="mt-2">Maka Soul</h5>
+          <p class="mb-0">Postnom : Makasi</p>
+          <small class="text-warning">Vocaliste</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="member-card">
+          <img src="assets/images/acceuilscene2.jpg" alt="Membre 3">
+          <h5 class="mt-2">Jonathan Bulime</h5>
+          <p class="mb-0">Postnom : Bulime</p>
+          <small class="text-warning">Guitariste Vocaliste</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="member-card">
+          <img src="assets/images/acceuil1.jpg" alt="Membre 1">
+          <h5 class="mt-2">Louison ZIK</h5>
+          <p class="mb-0">Postnom : Muhindo</p>
+          <small class="text-warning">Vocaliste</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-white py-4">
+    <p class="mb-0">&copy; 2025 Les Rossignols Tenors. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

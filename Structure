@@ -1,0 +1,18 @@
+groupe-artistes/
+├── index.html
+├── a-propos.html
+├── galerie.html
+├── musique.html         ← Affichage des vidéos/audio YouTube
+├── concerts.html
+├── contact.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── bootstrap/
+│   ├── css/
+│   │   └── bootstrap.min.css
+│   └── js/
+│       └── bootstrap.bundle.min.js
+├── assets/
+│   └── images/

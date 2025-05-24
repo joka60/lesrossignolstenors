@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galerie - Les Rossignols Tenors</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="assets/lightbox/css/lightbox.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .banner {
+      background: url('assets/images/slide1.jpg') center/cover no-repeat;
+      height: 60vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .banner h1 {
+      z-index: 2;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    h2 {
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #ffcc00;
+    }
+
+    .album-thumbnail {
+      cursor: pointer;
+      transition: transform 0.4s, box-shadow 0.3s;
+      border-radius: 8px;
+    }
+
+    .album-thumbnail:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+    }
+
+    .gallery-section {
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.4s ease, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+    }
+
+    .album-caption {
+      background-color: #1c1c1c;
+      padding: 15px;
+      border-left: 4px solid #ffcc00;
+      margin-top: 30px;
+      color: #ccc;
+      font-style: italic;
+      border-radius: 5px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    footer {
+      background-color: #000;
+      padding: 20px 0;
+      color: #aaa;
+    }
+
+    .btn-retour {
+      margin-bottom: 40px;
+    }
+
+    /* Bouton de téléchargement dans lightbox */
+    .lb-download {
+      position: absolute;
+      top: 10px;
+      right: 50px;
+      z-index: 9999;
+    }
+
+    .lb-download a {
+      color: white;
+      font-size: 18px;
+      background: rgba(0,0,0,0.6);
+      padding: 6px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .lb-download a:hover {
+      background: rgba(255, 204, 0, 0.8);
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Les Rossignols Tenors</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="a-propos.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="musique.html">Musique</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bannière -->
+  <div class="banner">
+    <h1>Galerie Photos</h1>
+  </div>
+
+  <!-- Choix des albums -->
+  <section class="container text-center">
+    <h2>Nos Albums</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <img src="assets/images/IF/IF2.jpg" alt="Album 1" class="img-fluid album-thumbnail" onclick="afficherAlbum('concert')">
+        <p class="text-warning mt-2 fw-bold">🎤 Concert Masauti à Institut Francais de Goma</p>
+      </div>
+      <div class="col-md-4">
+        <img src="assets/images/amani/amani.jpg" alt="Album 2" class="img-fluid album-thumbnail" onclick="afficherAlbum('amani')">
+        <p class="text-warning mt-2 fw-bold">🎉 Festival Amani</p>
+      </div>
+      <div class="col-md-4">
+        <img src="assets/images/semainedesart/sm2.jpg" alt="Album 3" class="img-fluid album-thumbnail" onclick="afficherAlbum('zik')">
+        <p class="text-warning mt-2 fw-bold">🎶 Semaine des Arts</p>
+      </div>
+      <div class="col-md-4">
+        <img src="assets/images/slide1.jpg" alt="Album 4" class="img-fluid album-thumbnail" onclick="afficherAlbum('autre')">
+        <p class="text-warning mt-2 fw-bold"> Autres Photos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Albums dynamiques -->
+
+  <section id="concert" class="container gallery-section">
+    <button class="btn btn-outline-warning btn-retour" onclick="retour()">← Retour</button>
+    <h2>📸 Album : Concert IF</h2>
+    <div class="row g-4 gallery">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/IF/IF1.jpg" data-lightbox="concert" data-title="Concert IF 1">
+          <img src="assets/images/IF/IF1.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/IF/IF2.jpg" data-lightbox="concert" data-title="Concert IF 2">
+          <img src="assets/images/IF/IF2.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+      
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/IF/IF3.jpg" data-lightbox="concert" data-title="Concert IF 3">
+          <img src="assets/images/IF/IF3.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/IF/IF4.jpg" data-lightbox="concert" data-title="Concert IF 4">
+          <img src="assets/images/IF/IF4.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+    </div>
+    <div class="album-caption">
+      Un moment fort au centre IF avec une ambiance unique et inoubliable.
+    </div>
+  </section>
+
+  <section id="amani" class="container gallery-section">
+    <button class="btn btn-outline-warning btn-retour" onclick="retour()">← Retour</button>
+    <h2>🎉 Album : Festival Amani</h2>
+    <div class="row g-4 gallery">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/amani/amani festival2.jpg" data-lightbox="amani" data-title="Amani 1">
+          <img src="assets/images/amani/amani festival2.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/amani/amani fetival 3.jpg" data-lightbox="amani" data-title="Amani 2">
+          <img src="assets/images/amani/amani fetival 3.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/amani/amani.jpg" data-lightbox="amani" data-title="Amani 3">
+          <img src="assets/images/amani/amani.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+    </div>
+    <div class="album-caption">
+      Une explosion culturelle au Festival Amani, partage et émotion au rendez-vous.
+    </div>
+  </section>
+
+  <section id="zik" class="container gallery-section">
+    <button class="btn btn-outline-warning btn-retour" onclick="retour()">← Retour</button>
+    <h2>🎶 Album : Semaine des Arts</h2>
+    <div class="row g-4 gallery">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/semainedesart/sm2.jpg" data-lightbox="zik" data-title="Zik Show 1">
+          <img src="assets/images/semainedesart/sm2.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/semainedesart/semaine des Art.jpg" data-lightbox="zik" data-title="Zik Show 2">
+          <img src="assets/images/semainedesart/semaine des Art.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/semainedesart/sm3.jpg" data-lightbox="zik" data-title="Zik Show 3">
+          <img src="assets/images/semainedesart/sm3.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+
+    </div>
+    <div class="album-caption">
+      Une performance énergique et des vibes incroyables avec RJ KANYERA au concert organiser par Foyer culturelle de Goma .
+    </div>
+  </section>
+
+  <section id="autre" class="container gallery-section">
+    <button class="btn btn-outline-warning btn-retour" onclick="retour()">← Retour</button>
+    <h2>🎶 Album : Autres Photos</h2>
+    <div class="row g-4 gallery">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/acceuil1.jpg" data-lightbox="zik" data-title="autre 1">
+          <img src="assets/images/acceuil1.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/HadisiUrban.jpg" data-lightbox="zik" data-title="autre 2">
+          <img src="assets/images/HadisiUrban.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/slide1.jpg" data-lightbox="zik" data-title="autre 3">
+          <img src="assets/images/slide1.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/IMG-20220404-WA0311.jpg" data-lightbox="zik" data-title="autre 4">
+          <img src="assets/images/IMG-20220404-WA0311.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <a href="assets/images/acceuilscene2.jpg" data-lightbox="zik" data-title="autre 5">
+          <img src="assets/images/acceuilscene2.jpg" class="img-fluid" alt="">
+        </a>
+      </div>
+    </div>
+    <div class="album-caption">
+      Autres Photos des differentes prestations.
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <p class="mb-0">&copy; 2025 Les Rossignols Tenors. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/lightbox/js/lightbox.min.js"></script>
+  <script>
+    function afficherAlbum(id) {
+      document.querySelectorAll('.gallery-section').forEach(section => {
+        section.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+      window.scrollTo({ top: 300, behavior: 'smooth' });
+    }
+
+    function retour() {
+      document.querySelectorAll('.gallery-section').forEach(section => {
+        section.style.display = 'none';
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    lightbox.option({
+      'albumLabel': "Image %1 sur %2"
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      lightbox.on('imageLoaded', () => {
+        const imgSrc = document.querySelector('.lightbox-image').src;
+        let downloadBtn = document.querySelector('.lb-download');
+        if (!downloadBtn) {
+          downloadBtn = document.createElement('div');
+          downloadBtn.classList.add('lb-download');
+          downloadBtn.innerHTML = `<a href="${imgSrc}" download>Télécharger</a>`;
+          document.querySelector('#lightbox').appendChild(downloadBtn);
+        } else {
+          downloadBtn.querySelector('a').href = imgSrc;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio - Les Rosignol Tenor</title>
+
+  <!-- Bootstrap CSS local -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .banner {
+      background: url('assets/images/semainedesart/slide1.jpg') center/cover no-repeat;
+      height: 60vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .banner h1 {
+      z-index: 2;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #f5f5f5;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    h2 {
+      color: #ffcc00;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background-color: #222;
+      color: #fff;
+      border: none;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+      transition: transform 0.3s;
+      border-radius: 12px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-img-top {
+      border-radius: 12px 12px 0 0;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .future {
+      background-color: #1c1c1c;
+      border-left: 4px solid #ffcc00;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #000;
+      padding: 20px 0;
+      color: #aaa;
+    }
+
+    .progress {
+      height: 10px;
+      background-color: #333;
+    }
+
+    .progress-bar {
+      background-color: #b4aa80;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Les Rossignols Tenors</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="a-propos.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="musique.html">Musique</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bannière -->
+  <div class="banner">
+    <h1>Notre Portfolio Artistique</h1>
+  </div>
+
+  <!-- Réalisations -->
+  <section class="container">
+    <h2>🌟 Réalisations Majeures</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="assets/images/amani/amani.jpg" class="card-img-top" alt="amani">
+          <div class="card-body">
+            <h5 class="card-title">Festival AMANI 2024</h5>
+            <p class="card-text">Nous avons montés sur la grande scène du Festival Amani devant plus de 20000 festivaliers, Festival AMANI est la plus grande festival de paix d'Afrique de l'Est. Où on a pu chanter la paix et danser pour changer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="assets/images/HadisiUrban.jpg" class="card-img-top" alt="Hadisi">
+          <div class="card-body">
+            <h5 class="card-title">Hadisi Urban Festival</h5>
+            <p class="card-text">Une performance mémorable au Hadisi Urban Festival, un moment de communion intense avec le public.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="assets/images/IF/IF3.jpg" class="card-img-top" alt="masauti">
+          <div class="card-body">
+            <h5 class="card-title">Concert Masauti</h5>
+            <p class="card-text">Concert Masauti est notre propre concert qu'on avait organisé à l'Institut Français de Goma le jour de la fête de la musique.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+          <div class="card h-100">
+            <img src="assets/images/semainedesart/s m1.jpg" class="card-img-top" alt="semart">
+            <div class="card-body">
+              <h5 class="card-title">Semaine des Arts</h5>
+              <p class="card-text">Semaine des Arts, concert organisé par Foyer culturelle de Goma où nous avons performés sur sa grande scène.</p>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card h-100">
+            <img src="assets/images/WhatsApp Image 2025-05-21 à 10.45.09_add55799.jpg" class="card-img-top" alt="albumhadisi">
+            <div class="card-body">
+              <h5 class="card-title">HADISI</h5>
+              <p class="card-text"> "HADISI" est un album spirituel, engagé et profondément humain. Chaque chanson est une histoire, une prière, une force transmise au travers de notre art vocal.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projets en cours & à venir -->
+   <!--
+  <section class="container">
+    <h2>🚀 Projets en Cours & À Venir</h2>
+    <div class="row"> -->
+
+      <!-- Projets en cours
+      <div class="col-md-6">
+        <h4>En Cours</h4>
+        <div class="future">
+          <h5>Nouveau Clip "Renaissance"</h5>
+          <p>Un projet vidéo en préparation, symbolisant la résilience post-conflit et l’espoir d’un avenir meilleur. Tournage prévu pour l'été 2025.</p>
+        </div>
+      </div>
+       -->
+
+      <!-- Projets à venir -->
+      <!--
+        <div class="col-md-6">
+        <h4>À Venir</h4>
+        <div class="future">
+          <h5>Tournée Régionale – Afrique Centrale 2026</h5>
+          <p>Une grande tournée prévue dans plusieurs villes : Kinshasa, Brazzaville, Douala et Yaoundé, pour partager notre musique et rassembler les peuples.</p>
+          <div class="progress mt-2">
+            <div class="progress-bar" style="width: 25%;">25%</div>
+          </div>
+        </div>
+        <div class="future">
+          <h5>Documentaire "Voix de l'Âme"</h5>
+          <p>Un projet de film retraçant l’histoire du groupe, ses origines, ses luttes et son impact social. Sortie prévue en fin 2026.</p>
+          <div class="progress mt-2">
+            <div class="progress-bar" style="width: 10%;">10%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <p class="mb-0">&copy; 2025 Les Rossignols Tenors. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
